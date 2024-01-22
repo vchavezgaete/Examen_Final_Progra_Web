@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Nombres</title>
+    <link href="/static/css/estilosis.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+    <h1>Inisio de sesión</h1>
+    <form action="/iniciosesion" method="POST">
+
+        <label for="nombre">Ingresa tu nombre:</label>
+        <input id="nombre" name="nombre" required type="text">
+        <br>
+        <label for="password">Ingresa tu contraseña:</label>
+        <input id="password" name="password" onfocus="obfuscatePassword(this)" required type="password">
+        <br>
+
+
+        <button type="submit">Verificar</button>
+        <br>
+    </form>
+    {% if resultado1%}
+    <div1>
+        <br>
+        <p>{{ resultado1 }}</p>
+    </div1>
+    {% endif %}
+</div>
+</body>
+</html>

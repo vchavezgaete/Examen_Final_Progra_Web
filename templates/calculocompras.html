@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario Calculo Notas</title>
+    <link href="/static/css/estilosfcc.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+    <h1>Calculo de compras</h1>
+    <form action="/calculocompras" method="POST">
+
+        <label for="nombre">Ingresa tu nombre</label>
+        <input id="nombre" name="nombre" required type="text">
+        <br>
+        <label for="numero1">Ingresa tu edad</label>
+        <input id="numero1" min="1" name="numero1" required type="number">
+        <br>
+        <label for="numero2">Ingresa la cantidad de tarros de pintura a comprar</label>
+        <input id="numero2" min="1" name="numero2" required type="number">
+        <br>
+        <button type="submit">Calcular</button>
+        <br>
+    </form>
+    {% if resultado1 %}
+    <div>
+        <p>Nombre del cliente: {{ nombre1 }}</p>
+        <p>Total sin descuento: ${{ resultado1 }}</p>
+        <p>El descuento es: ${{ resultado2 }}</p>
+        <p>El total a pagar es de: ${{ resultado3 }}</p>
+    </div>
+    {% endif %}
+
+</div>
+</body>
+</html>
